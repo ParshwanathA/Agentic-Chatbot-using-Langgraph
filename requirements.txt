@@ -1,0 +1,10 @@
+langgraph
+langchain_groq
+langchain-google-genai
+python-dotenv
+pydantic
+streamlit
+langgraph-checkpoint-sqlite
+langchain_community
+pypdf
+langchain-text-splitters
