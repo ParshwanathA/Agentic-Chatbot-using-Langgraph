@@ -24,7 +24,7 @@ jobs:
   # ============================================================
   integration:
     name: Continuous Integration
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, ubuntu-latest]    
 
     steps:
       - name: Checkout repository
@@ -45,7 +45,7 @@ jobs:
   push_to_registry:
     name: Build and Push Docker Image
     needs: integration
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, ubuntu-latest]
 
     steps:
       - name: Checkout repository
@@ -96,7 +96,7 @@ jobs:
   continuous_deployment:
     name: Deploy to AWS EC2
     needs: push_to_registry
-    runs-on: self-hosted
+    runs-on: [self-hosted, ubuntu-latest]
 
     steps:
       - name: Log in to Docker Hub
